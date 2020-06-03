@@ -13,10 +13,7 @@ function loading(){
 
 
 gallery.querySelectorAll('img').forEach(function (item) {
-    if (item.complete) {
-        console.log(item.src);
-    }
-    else {
+
         item.addEventListener('load', function () {
             var altura = getVal(gallery, 'grid-auto-rows');
             var gap = getVal(gallery, 'grid-row-gap');
@@ -24,11 +21,10 @@ gallery.querySelectorAll('img').forEach(function (item) {
             gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
             gitem.classList.remove('byebye');
         });
-    }
 });
 }
 
-setTimeout(loading,1000);
+loading();
 window.addEventListener('resize', resizeAll);
 gallery.querySelectorAll('.gallery-item').forEach(function (item) {
     item.addEventListener('click', function () {        
