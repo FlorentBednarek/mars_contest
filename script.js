@@ -14,17 +14,20 @@ function loading(){
 
     gallery.querySelectorAll('img').forEach(
         function (item) {
-            item.classList.add('byebye');
             var altura = getVal(gallery, 'grid-auto-rows');
             var gap = getVal(gallery, 'grid-row-gap');
             var gitem = item.parentElement.parentElement;
             gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-            item.classList.remove('byebye');
+            console.log(gitem.classList);
+            
+            gitem.classList.remove('byebye');
+            console.log(gitem.classList);
+        
         }
     );
 }
 
-setTimeout(loading,1000);
+setTimeout(loading,1500);
 
 window.addEventListener('resize', resizeAll);
 gallery.querySelectorAll('.gallery-item').forEach(function (item) {
