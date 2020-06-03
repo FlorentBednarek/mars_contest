@@ -24,7 +24,7 @@ function loading(){
     );
 }
 
-setTimeout(loading,100);
+setTimeout(loading,1000);
 
 window.addEventListener('resize', resizeAll);
 gallery.querySelectorAll('.gallery-item').forEach(function (item) {
