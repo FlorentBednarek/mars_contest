@@ -12,23 +12,23 @@ var resizeAll = function () {
 function loading(){
 
 
-    gallery.querySelectorAll('img').forEach(
-        function (item) {
+gallery.querySelectorAll('img').forEach(function (item) {
+    if (item.complete) {
+        console.log(item.src);
+    }
+    else {
+        item.addEventListener('load', function () {
             var altura = getVal(gallery, 'grid-auto-rows');
             var gap = getVal(gallery, 'grid-row-gap');
             var gitem = item.parentElement.parentElement;
             gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-            console.log(gitem.classList);
-            
             gitem.classList.remove('byebye');
-            console.log(gitem.classList);
-        
-        }
-    );
+        });
+    }
+});
 }
 
-setTimeout(loading,1500);
-
+loading();
 window.addEventListener('resize', resizeAll);
 gallery.querySelectorAll('.gallery-item').forEach(function (item) {
     item.addEventListener('click', function () {        
