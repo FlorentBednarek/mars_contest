@@ -1,6 +1,12 @@
+
+@font-face {
+  font-family: nasalization;
+  src:url(nasalization-free.regular.ttf);
+}
+
 body {
   background-color: #eee;
-  font-family: "nasalization free";
+  font-family: "nasalization";
   font-size: 25px;
 }
 
