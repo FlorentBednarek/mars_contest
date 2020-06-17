@@ -8,6 +8,9 @@ body {
   background-color: #eee;
   font-family: "nasalization";
   font-size: calc(15px + 1vw);
+  height : 100vh;
+  width : 100vw;
+  margin : 0;
 }
 
 
@@ -93,7 +96,7 @@ body {
 header {
   position: relative;
   width: 100%;
-  height: 15%;
+  height: 10%;
   margin:0;
 }
 
@@ -174,7 +177,7 @@ video {
 
 @media only screen and (max-device-width: 700px) {
       .hdr-link {
-        top : 60%;
+        top : 65%;
         text-align: left;
       }
     }
