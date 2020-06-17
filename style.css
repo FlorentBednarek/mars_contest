@@ -11,7 +11,6 @@ body {
 }
 
 
-
 /* style gallery*/
 
 
@@ -108,7 +107,7 @@ h1 > a:hover {
 }
 
 .underline {
-  text-decoration: underline 3px;
+  text-decoration: underline 2px;
 }
 
 .hdr-title {
@@ -120,8 +119,8 @@ h1 > a:hover {
   margin:0;
   padding: 0;
   top : 20%;
-  left : 60%;
-  width: 40%;
+  left : 0;
+  width: 98%;
   height: 100%;
   text-align: right;
 }
@@ -139,7 +138,7 @@ li > a {
 }
 
 li > a:hover {
-  text-decoration: underline 3px;
+  text-decoration: underline 2px;
   opacity: 0.5;
 
 }
@@ -150,7 +149,9 @@ li > a:hover {
 .summary {
   width :90%;
   border : solid #ccc 1px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: solid 2px #999;
   background-color : #ccc;
   font-size : calc(10px + 1vw);
   padding : 20px;
@@ -164,6 +165,23 @@ h2 {
 
 .video {
   width: 50%;
-  margin-top : 20px;
   margin-left : 15%;
 }
+
+video {
+  margin top 
+}
+
+@media only screen and (max-device-width: 700px) {
+      .hdr-link {
+        top : 60%;
+        text-align: left;
+      }
+    }
+
+ @media only screen and (min-device-width: 701px) {
+      .hdrlink {
+        top : 20%;
+        text-align: right;
+      }
+    }
