@@ -9,22 +9,19 @@ var resizeAll = function () {
         el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
     });
 };
-function loading(){
-
-
-gallery.querySelectorAll('img').forEach(function (item) {
-
-        item.addEventListener('load', function () {
-            var altura = getVal(gallery, 'grid-auto-rows');
-            var gap = getVal(gallery, 'grid-row-gap');
-            var gitem = item.parentElement.parentElement;
-            gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-            gitem.classList.remove('byebye');
-        });
-});
+function load(item){
+        date = new Date().getTime();
+        src = item.src + "?t=" + date;
+        var altura = getVal(gallery, 'grid-auto-rows');
+        var gap = getVal(gallery, 'grid-row-gap');
+        var gitem = item.parentElement.parentElement;
+        gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+        item.scr = src;
 }
 
-loading();
+
+
+
 window.addEventListener('resize', resizeAll);
 gallery.querySelectorAll('.gallery-item').forEach(function (item) {
     item.addEventListener('click', function () {        
