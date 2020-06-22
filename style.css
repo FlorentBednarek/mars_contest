@@ -133,6 +133,7 @@ h1 > a:hover {
 
 li {
   display: inline-block;
+  margin-left: 15px;
 }
 
 li > a {
