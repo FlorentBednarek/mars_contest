@@ -24,6 +24,7 @@ body {
 
 /* style header */
 header {
+  display: block;
   position: fixed;
   width: 100%;
   height: 10vh;
@@ -51,49 +52,166 @@ h1 > a:hover {
 
 .hdr-title {
   margin:0;
+  float: left;
   font-family: "nasalization";
   font-size: calc(17px + 1.5vw);
   padding-top: 2.5vh;
   padding-left : 10px;
+  width: 80% 
 }
 
-.hdr-link {
-  position: absolute;
-  margin:0;
-  padding: 0;
-  top : 17%;
-  height: 100%;
-  text-align: right;
-  left: 48%;
-  width: 50%;
-
-}
-
-.hdr-link > li {
-  display: inline-block;
-  padding-left: 15px;
-  padding-top: 10px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-  border : solid 1px #999;
-  border-radius: 5px;
-  background-color: #aaa;
-  cursor: pointer;
-}
-
-.hdr-link > li > a {
-  text-decoration: none;
-  font-weight: bold;
-  color : black;
-  top : 0%;
-  font-size : calc(13px + 1vw);
-}
-
-.hdr-link > li:hover {
-  background-color: #999;
-}
 
 /* fin style header */
+
+#menuToggle
+{
+  display: inline-block;
+  float: right;
+  position: relative;
+   
+  margin-right: 20px;
+  margin-top: 40px;
+  top
+  z-index: 10;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #232323;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 250px;
+  margin: calc(10vh - 40px - 27px) 0 0 -136px;
+  padding: 35px;
+  padding-top: 15px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+
+
 
 
 /* style body */
@@ -123,12 +241,12 @@ h1 > a:hover {
 }
 
 .summary {
-  width :90%;
+  width :70%;
   border : solid #ccc 1px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom: solid 2px #777;
-  background-color : rgba(204,204,204,0.7);
+  background-color : rgba(204,204,204,0.6);
   /*font-size : calc(10px + 1vw);*/
   margin : auto;
   padding : 10px;
@@ -143,9 +261,9 @@ h2 {
 
 .video {
 
-  width: 90%;
+  width: 70%;
 
-  background-color:  rgba(204,204,204,0.7);
+  background-color:  rgba(204,204,204,0.6);
   border-left: solid 1px #ccc;
   border-right: solid 1px #ccc;
   margin: auto;
@@ -153,13 +271,13 @@ h2 {
 }
 
 video {
-  width: 70%;
-  margin-left : calc(15% - 10px);
+  width: 95%;
+  margin-left : calc(2.5%);
 }
 
 .speak {
-  width: 90%;
-  background-color:  rgba(204,204,204,0.7);
+  width: 70%;
+  background-color:  rgba(204,204,204,0.6);
   border-left: solid 1px #ccc;
   border-top : solid 2px #777;
   border-right: solid 1px #ccc;
@@ -172,10 +290,10 @@ video {
 .team {
   font-size : calc(5px + 1vw);
   text-align: center;
-  width :90%;
+  width :70%;
   margin: auto;
   padding: 10px;
-  background-color:  rgba(204,204,204,0.7);
+  background-color:  rgba(204,204,204,0.6);
 
   border: solid 1px #ccc;
   border-bottom-left-radius: 5px;
@@ -227,7 +345,7 @@ video {
 }
 
 .references-box {
-  background-color: rgb(204,204,204,0.7);
+  background-color: rgb(204,204,204,0.6);
   border :solid #ccc 1px;
   border-radius: 5px;
   width: 90%;
@@ -345,33 +463,18 @@ footer {
   flex-shrink: 0;
   margin:0;
   width:  100%;
-  height: 11%;
+  height: 12%;
   background-color: #bbb;
 }
 
 .copyright {
   margin : 0;
-  padding-right:   15px;
-  padding-top : 15px;
+  padding-right: 15px;
+  padding-top : 10px;
+  padding-bottom: 10px;
   font-size:  15px;
   float:  right;      
   text-align: center;
-}
-
-.footer-main {
-  margin-top:15px;
-  margin-left: 15px;
-  width: 50%;
-  font-size: calc(12px + 1vw);
-  float: left;
-}
-
-.footer-main > a {
-  color: black;
-}
-
-.footer-main > a:hover {
-  opacity: 0.5;
 }
   
 
@@ -380,37 +483,47 @@ footer {
 
 
 @media only screen and (max-device-width: 795px) {
-      .hdr-link {
-        top : 40%;
-        text-align: left;
-        width: 95%;
-        left: 10px;
-      }
-      li {
-        margin-top: 10px;
-      }
-      header {
-        height: 14vh;
-      }
-      .hiddenHeader {
-        height: 14vh;
-      }
+  
+  header {
+    height: 14vh;
+  }
+  .hiddenHeader {
+    height: 14vh;
+  }
+  #menu {
+    margin: calc(14vh - 40px - 27px) 0 0 -136px;
 
-      .footer-main{
-        width: 95%;
-        text-align: center;
-      }
+  }
+  .summary {
+    width: 90%;
+  }
+  .video {
+    width: 90%;
+  }
+  .speak { 
+    width: 90%;  
+  }
+  .team {
+    width: 90%;  
+  }
 
-      .copyright {
-        margin-left: 20px;
-        float: left;
-      }
-      footer {
-        height: 22vh;
-      }
-      video {
-       width: 100%;
-       margin:0;
-      }
+  .copyright {
+    margin-left: 20px;
+    float: left;
+  }
+  video {
+   width: 100%;
+   margin:0;
+  }
 }
 
+
+@media only screen and (max-device-height: 630px) {
+  #menuToggle {
+    margin-top: 15px;
+  }
+  #menu {
+    margin: calc(14vh - 15px - 27px) 0 0 -136px;
+
+  }
+}
