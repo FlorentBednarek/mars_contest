@@ -178,7 +178,7 @@ h1 > a:hover {
 {
   position: absolute;
   width: 250px;
-  margin: calc(10vh - 40px - 27px) 0 0 -136px;
+  margin: calc(10vh - 40px - 27px) 0 0 -167px;
   padding: 35px;
   padding-top: 15px;
   
@@ -491,7 +491,7 @@ footer {
     height: 14vh;
   }
   #menu {
-    margin: calc(14vh - 40px - 27px) 0 0 -136px;
+    margin: calc(14vh - 40px - 27px) 0 0 -167px;
 
   }
   .summary {
@@ -507,7 +507,7 @@ footer {
     width: 90%;  
   }
   .references-box {
-    width: 90%;
+    width: 90%; 
   }
   .copyright {
     margin-left: 20px;
@@ -525,7 +525,7 @@ footer {
     margin-top: 15px;
   }
   #menu {
-    margin: calc(14vh - 15px - 27px) 0 0 -136px;
+    margin: calc(14vh - 15px - 27px) 0 0 -167px;
 
   }
 }
