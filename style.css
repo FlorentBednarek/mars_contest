@@ -4,17 +4,27 @@
   src:url(nasalization-free.regular.ttf);
 }
 
+@font-face {
+  font-family: gotham-book;
+  src:url(HomepageBaukasten-Book.ttf);
+}
+
+@font-face {
+  font-family: gotham-black;
+  src:url(Metropolis-Black.otf);
+}
+
+
 
 body {
   background-color: #eee;
-  font-family: "Helvetica";
+  font-family: "gotham-book";
   font-size: calc(15px + 1vw);
   height: 100vh;
   width : 100%;
   margin : 0;
-
-
 }
+
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -257,6 +267,7 @@ h1 > a:hover {
 h2 {
   padding:0;
   margin:10px;
+  font-family: "gotham-black";
 }
 
 .video {
