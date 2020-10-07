@@ -60,13 +60,23 @@ h1 > a:hover {
   background-color: #999;
 }
 
+header > img {
+  position: absolute;
+  height: calc(10vh - 20px);
+  width: auto;
+  margin: 10px;
+  left: 0;
+  top: 0; 
+}
+
 .hdr-title {
+  display: inline;
   margin:0;
-  float: left;
+  line-height: 10vh;
   font-family: "nasalization";
   font-size: calc(17px + 1.5vw);
   padding-top: 2.5vh;
-  padding-left : 10px;
+  padding-left : calc(10vh + 20px);
   width: 80% 
 }
 
