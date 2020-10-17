@@ -72,7 +72,7 @@ header > img {
 .hdr-title {
   display: inline;
   margin:0;
-  line-height: 10vh;
+  line-height: 8vh;
   font-family: "nasalization";
   font-size: calc(17px + 1.5vw);
   padding-top: 2.5vh;
@@ -291,8 +291,10 @@ h2 {
   padding: 10px;
 }
 
-video {
+iframe {
   width: 95%;
+  height: calc(9 / 16 * 70vw) ;
+  border: none;
   margin-left : calc(2.5%);
 }
 
@@ -488,14 +490,25 @@ footer {
   background-color: #bbb;
 }
 
+.contact {
+  text-align: center;
+  margin : 0; 
+  margin-top: calc(5vh / 2 - 17.5px );
+  padding-right: 15px;
+  padding-top : 10px;
+  padding-bottom: 10px;
+  font-size:  15px;
+  float:  left;      
+}
+
 .copyright {
+  text-align: center;
   margin : 0;
   padding-right: 15px;
   padding-top : 10px;
   padding-bottom: 10px;
   font-size:  15px;
   float:  right;      
-  text-align: center;
 }
   
 
@@ -512,7 +525,7 @@ footer {
     height: 14vh;
   }
   #menu {
-    margin: calc(14vh - 40px - 27px) 0 0 -167px;
+    margin: calc(14vh - 40px - 27px  - 15px - 18px) 0 0 -167px;
 
   }
   .summary {
@@ -534,17 +547,28 @@ footer {
     margin-left: 20px;
     float: left;
   }
-  video {
+  iframe {
+    height: calc(9 / 16 * 90vw) ;
    width: 100%;
    margin:0;
+  }
+  header > img {
+    visibility: hidden;
+    width: 0px;
+    margin: 0;
+  }
+  .hdr-title {
+    padding-left : 5px;
+
+  }
+  #menuToggle {
+    margin-top: 15px;
   }
 }
 
 
 @media only screen and (max-device-height: 630px) {
-  #menuToggle {
-    margin-top: 15px;
-  }
+
   #menu {
     margin: calc(14vh - 15px - 27px) 0 0 -167px;
 
